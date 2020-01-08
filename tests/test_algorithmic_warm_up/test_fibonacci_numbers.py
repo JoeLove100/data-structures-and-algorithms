@@ -77,6 +77,18 @@ class TestFibonacciNumbers(unittest.TestCase):
         # assert
         self.assertEqual(result, 5)
 
+    def test_last_digit_huge(self):
+        # arrange
+
+        n = 327305
+
+        # act
+        result = last_digit_of_fib(n)
+
+        # assert
+        self.assertEqual(result, 5)
+
+
 
 
 
