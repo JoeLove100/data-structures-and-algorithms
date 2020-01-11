@@ -22,3 +22,4 @@ if __name__ == "__main__":
     n = data[0]
     a = data[1:(n + 1)]
     b = data[(n + 1):]
+    print(get_max_product_of_pairs(a, b))
