@@ -3,7 +3,7 @@ from typing import List, Tuple
 
 
 def get_maximal_loot_value(loot: List[Tuple[int, int]],
-                           max_weight) -> float:
+                           maximum_weight) -> float:
     """
     get the max value of the loot which can be taken
     with based on the maximal available weight
@@ -13,7 +13,7 @@ def get_maximal_loot_value(loot: List[Tuple[int, int]],
     loot.sort(key=lambda x: x[0] / x[1])
 
     # set up some utility variables
-    available_weight = max_weight
+    available_weight = maximum_weight
     total_value = 0
 
     while available_weight > 0 and len(loot) > 0:
@@ -29,13 +29,13 @@ def get_maximal_loot_value(loot: List[Tuple[int, int]],
 
 
 if __name__ == "__main__":
+    data = list(map(int, sys.stdin.read().split()))
+    n = data[0]
+    max_weight = data[1]
+    values = data[2:(2 * n + 2):2]
+    weights = data[3:(2 * n + 2):2]
+    loot_data = [(v, w) for v, w in zip(values, weights)]
+    print(get_maximal_loot_value(loot_data, max_weight))
 
-    with sys.stdin as raw_input:
-        input_data = raw_input.read()
-        input_data = input_data.split("\n")
-        input_data = [list(map(int, row.split(" "))) for row in input_data]
-
-    weight = input_data[0][1]
-    loot_data = [(row[0], row[1]) for i, row in enumerate(input_data) if i != 0]
 
 
