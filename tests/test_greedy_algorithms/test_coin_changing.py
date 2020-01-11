@@ -39,3 +39,15 @@ class TestCoinChanging(unittest.TestCase):
 
         # assert
         self.assertEqual(result, 6)
+
+    def test_get_min_number_of_coins_unsorted(self):
+        # arrange
+
+        n = 8
+        coin_vals = [1, 10, 5]
+
+        # act
+        result = get_min_number_of_coins(n, coin_vals)
+
+        # assert
+        self.assertEqual(result, 4)

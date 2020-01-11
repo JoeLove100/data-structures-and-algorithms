@@ -11,6 +11,7 @@ def get_min_number_of_coins(change: int,
 
     coin_count = 0
     remaining_value = change
+    coin_vals.sort(reverse=True)
 
     for val in coin_vals:
         coin_count += math.floor(remaining_value / val)
@@ -24,7 +25,7 @@ def get_min_number_of_coins(change: int,
 
 if __name__ == "__main__":
 
-    value = int(input())
+    value = 8 #int(input())
     print(get_min_number_of_coins(value, [1, 5, 10]))
 
 
