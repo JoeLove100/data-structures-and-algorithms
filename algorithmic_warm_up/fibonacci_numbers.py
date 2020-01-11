@@ -1,7 +1,7 @@
 from typing import Generator, Any
 
 
-def _fib_number_generator() -> Generator[int, None, None]:
+def fib_number_generator() -> Generator[int, None, None]:
     """
     generator for fibonacci numbers
     """
@@ -39,7 +39,7 @@ def get_nth_fib_number(n):
     a more efficient iterative method
     """
 
-    g = _fib_number_generator()
+    g = fib_number_generator()
     fib_number = get_nth_generator_value(n, g)
     return fib_number
 
