@@ -25,7 +25,7 @@ def get_min_number_of_coins(change: int,
 
 if __name__ == "__main__":
 
-    value = 8 #int(input())
+    value = int(input())
     print(get_min_number_of_coins(value, [1, 5, 10]))
 
 
