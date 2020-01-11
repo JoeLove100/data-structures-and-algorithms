@@ -11,12 +11,12 @@ def compute_min_refills(total_distance: int,
     the petrol stops and the total distance
     """
 
+    stops.insert(0, 0)
+    stops.append(total_distance)
+
     if any([stops[i + 1] - stops[i] > car_distance for i in range(len(stops) - 1)]):
         # journey is not possible
         return -1
-
-    stops.insert(0, 0)
-    stops.append(total_distance)
 
     number_of_refills = 0
     current_refill = 0

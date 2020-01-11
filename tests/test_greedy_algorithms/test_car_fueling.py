@@ -56,4 +56,31 @@ class TestCarFueling(unittest.TestCase):
         # assert
         self.assertEqual(result, 2)
 
+    def test_compute_min_refills_too_far_to_first(self):
+        # arrange
+
+        total_distance = 10
+        stops = [5, 6, 7, 8]
+        car_distance = 2
+
+        # act
+        result = compute_min_refills(total_distance, car_distance, stops)
+
+        # assert
+        self.assertEqual(result, -1)
+
+    def test_compute_min_refills_too_far_to_end(self):
+        # arrange
+
+        total_distance = 10
+        stops = [1, 3, 5, 7]
+        car_distance = 2
+
+        # act
+        result = compute_min_refills(total_distance, car_distance, stops)
+
+        # assert
+        self.assertEqual(result, -1)
+
+
 
