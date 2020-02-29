@@ -1,5 +1,7 @@
 import unittest
-from data_structures.binary_search_trees.is_binary_search_tree import get_min_key, get_max_key, is_binary_search_tree
+from data_structures.binary_search_trees.is_binary_search_tree import get_min_key, get_max_key, \
+    is_binary_search_tree
+from data_structures.binary_search_trees.is_binary_search_tree_2 import is_binary_search_tree_with_duplicates
 
 
 class TestIsBinarySearchTree(unittest.TestCase):
@@ -11,6 +13,16 @@ class TestIsBinarySearchTree(unittest.TestCase):
             tree = [[2, 1, 2], [1, -1, -1], [3, -1, -1]]
         else:
             tree = [[2, 1, 2], [3, -1, -1], [2, -1, -1]]
+
+        return tree
+
+    @staticmethod
+    def get_small_tree_with_dupes(is_binary_search: bool):
+
+        if is_binary_search:
+            tree = [[2, 1, 2], [1, -1, -1], [2, -1, -1]]
+        else:
+            tree = [[2, 1, 2], [2, -1, -1], [3, -1, -1]]
 
         return tree
 
@@ -121,3 +133,24 @@ class TestIsBinarySearchTree(unittest.TestCase):
 
         # assert
         self.assertFalse(result)
+
+    def test_is_binary_tree_with_dupes_true(self):
+        # arrange
+        tree = self.get_small_tree_with_dupes(is_binary_search=True)
+
+        # act
+        result = is_binary_search_tree_with_duplicates(tree)
+
+        # assert
+        self.assertTrue(result)
+
+    def test_is_binary_tree_with_dupes_false(self):
+        # arrange
+        tree = self.get_small_tree_with_dupes(is_binary_search=False)
+
+        # act
+        result = is_binary_search_tree_with_duplicates(tree)
+
+        # assert
+        self.assertFalse(result)
+
