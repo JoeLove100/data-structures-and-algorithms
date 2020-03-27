@@ -4,7 +4,6 @@ from collections import namedtuple
 
 
 Edge = namedtuple("Edge", ["weight", "destination"])
-Node = namedtuple("Node", ["key", "shortest_path"])
 
 
 @total_ordering
