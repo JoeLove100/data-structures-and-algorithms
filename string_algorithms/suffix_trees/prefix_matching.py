@@ -54,7 +54,7 @@ class Trie:
         output = []
         count = 0
 
-        while count < len(text):
+        while count <= len(text):
             next_node = None
             for successor in current_node.successors:
                 if successor.letter == self._const:
@@ -116,13 +116,13 @@ if __name__ == "__main__":
     if not matches:
         print("")
     else:
-        for m in matches:
+        for m in sorted(list(set(matches))):
             print(m, end=" ")
 
 
 # if __name__ == "__main__":
 #
-#     r = get_match_positions('bdabdbaabd', ['ad', 'db', 'bd', 'dc'])
+#     r = get_match_positions('acata', ['at', 'a', 'ag'])
 #     print(r)
 
 #
