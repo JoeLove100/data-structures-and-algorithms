@@ -18,18 +18,19 @@ class TestCountSort(unittest.TestCase):
         # arrange
         text = "agbec"
 
-        # assert
+        # act
         result = get_sorted_text(text)
 
         # assert
-        self.assertSequenceEqual([0, 4, 1, 3, 2], result)
+        self.assertSequenceEqual([0, 2, 4, 3, 1], result)
 
     def test_get_sorted_text(self):
         # arrange
         text = "abcaabcdb"
 
-        # assert
+        # act
         result = get_sorted_text(text)
 
         # assert
-        self.assertSequenceEqual([0, 3, 6, 1, 2, 4, 7, 8, 5], result)
+        self.assertSequenceEqual([0, 3, 4, 1, 5, 8, 2, 6, 7], result)
+

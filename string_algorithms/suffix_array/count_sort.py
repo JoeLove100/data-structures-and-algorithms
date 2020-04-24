@@ -20,7 +20,12 @@ def get_sorted_text(text: str) -> List[int]:
 
     for i in list(range(len(text)))[::-1]:
         letter = text[i]
-        positions[i] = count[letter] - 1
+        positions[count[letter] - 1] = i
         count[letter] -= 1
 
     return positions
+
+
+if __name__ == "__main__":
+
+    get_sorted_text("AACGATAGCGGTAGA$")
